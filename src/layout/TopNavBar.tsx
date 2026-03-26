@@ -27,12 +27,18 @@ export function TopNavBar() {
             >
               Course Catalog
             </Link>
-            <a className="text-blue-700 dark:text-blue-300 border-b-2 border-blue-900 dark:border-blue-300 pb-1" href="#">
+            <Link 
+              className="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors" 
+              to="/tps"
+            >
               TPs
-            </a>
-            <a className="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors" href="#">
+            </Link>
+            <Link 
+              className="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors" 
+              to="/exams"
+            >
               Exams
-            </a>
+            </Link>
           </nav>
         </div>
         <div className="flex items-center gap-4">
