@@ -9,12 +9,11 @@ export function HomePage() {
       <section className="mb-16 grid grid-cols-12 gap-8 items-end">
         <div className="col-span-12 md:col-span-8">
           <h1 className="font-headline text-5xl md:text-6xl text-primary mb-4 leading-tight tracking-tight">
-            Curated Knowledge for the <br />
-            <span className="italic text-surface-tint">Modern Scholar</span>
+            Software Engineering for <br />
+            <span className="italic text-surface-tint">Cloud computing</span>
           </h1>
           <p className="font-body text-lg text-secondary max-w-2xl">
-            Explore our comprehensive collection of peer-reviewed course materials, structured laboratory
-            protocols, and authoritative academic assessments.
+            Build, deploy, and scale applications using cutting-edge cloud technologies, modern architectures, and industry best practices.
           </p>
         </div>
         <div className="col-span-12 md:col-span-4 flex justify-end gap-3 pb-2">

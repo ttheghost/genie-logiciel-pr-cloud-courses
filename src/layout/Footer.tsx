@@ -6,10 +6,10 @@ export function Footer() {
       <div className="max-w-screen-2xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center opacity-80 hover:opacity-100 transition-opacity">
         <div className="mb-6 md:mb-0 text-center md:text-left">
           <span className="font-serif text-lg italic text-slate-900 dark:text-slate-100 block mb-2">
-            The Academic Editorial
+            Software Engineering
           </span>
           <p className="font-sans text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400">
-            © 2024 The Academic Editorial. All rights reserved.
+            © 2026 Software Engineering. All rights reserved.
           </p>
         </div>
         <nav className="flex gap-8 font-sans text-xs uppercase tracking-widest">

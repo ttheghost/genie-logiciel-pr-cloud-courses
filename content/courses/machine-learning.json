@@ -1,0 +1,6 @@
+{
+    "type": "Course",
+    "reference": "machine-learning",
+    "title": "Machine Learning",
+    "introMarkdownRef": "machine-learning-intro"
+}

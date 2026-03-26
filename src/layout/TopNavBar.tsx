@@ -18,7 +18,7 @@ export function TopNavBar() {
       <div className="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
         <div className="flex items-center gap-8">
           <span className="font-serif italic text-2xl text-blue-950 dark:text-white tracking-tight">
-            The Academic Editorial
+            Software Engineering
           </span>
           <nav className="hidden md:flex items-center gap-6 font-serif text-blue-900 dark:text-blue-100">
             <Link
@@ -27,14 +27,14 @@ export function TopNavBar() {
             >
               Course Catalog
             </Link>
-            <Link 
-              className="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors" 
+            <Link
+              className="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors"
               to="/tps"
             >
               TPs
             </Link>
-            <Link 
-              className="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors" 
+            <Link
+              className="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors"
               to="/exams"
             >
               Exams
@@ -52,7 +52,7 @@ export function TopNavBar() {
               type="text"
             />
           </div>
-          <button 
+          <button
             onClick={toggleTheme}
             title="Toggle theme"
             className="material-symbols-outlined text-blue-900 dark:text-blue-200 hover:bg-slate-100 dark:hover:bg-slate-800 p-2 rounded-md transition-all">
