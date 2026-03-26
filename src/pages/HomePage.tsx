@@ -1,0 +1,130 @@
+import { Link } from 'react-router-dom'
+import { coursesByReference } from '../content/contentStore'
+
+export function HomePage() {
+  const courses = Array.from(coursesByReference.values()).sort((a, b) => a.title.localeCompare(b.title, 'fr'))
+
+  return (
+    <main className="max-w-screen-2xl mx-auto px-8 py-12">
+      <section className="mb-16 grid grid-cols-12 gap-8 items-end">
+        <div className="col-span-12 md:col-span-8">
+          <h1 className="font-headline text-5xl md:text-6xl text-primary mb-4 leading-tight tracking-tight">
+            Curated Knowledge for the <br />
+            <span className="italic text-surface-tint">Modern Scholar</span>
+          </h1>
+          <p className="font-body text-lg text-secondary max-w-2xl">
+            Explore our comprehensive collection of peer-reviewed course materials, structured laboratory
+            protocols, and authoritative academic assessments.
+          </p>
+        </div>
+        <div className="col-span-12 md:col-span-4 flex justify-end gap-3 pb-2">
+          <div className="flex items-center gap-2 bg-secondary-container px-4 py-2 rounded-full text-on-secondary-container text-xs font-semibold tracking-wider uppercase">
+            <span className="material-symbols-outlined text-sm">filter_list</span>
+            <span>Filter Catalog</span>
+          </div>
+          <div className="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full text-secondary text-xs font-semibold tracking-wider uppercase border border-outline-variant/20">
+            <span>Sort by: Latest</span>
+          </div>
+        </div>
+      </section>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {courses.map((course, idx) => {
+          const isFeatured = idx === 0
+          if (isFeatured) {
+            return (
+              <div
+                key={course.reference}
+                className="lg:col-span-2 group relative bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
+              >
+                <div className="aspect-[21/9] w-full overflow-hidden bg-primary-container relative">
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent" />
+                  <div className="absolute inset-0">
+                    <div className="h-full w-full opacity-60 bg-gradient-to-br from-primary to-primary-fixed-dim" />
+                  </div>
+                  <div className="absolute bottom-6 left-8">
+                    <span className="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-widest uppercase px-2 py-1 rounded-sm mb-2 inline-block">
+                      Featured Discipline
+                    </span>
+                    <h2 className="font-headline text-3xl text-white">{course.title}</h2>
+                  </div>
+                </div>
+                <div className="p-8 grid grid-cols-2 gap-6">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Author</p>
+                    <p className="font-headline text-lg text-primary">Editorial Team</p>
+                  </div>
+                  <div>
+                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">
+                      Professor
+                    </p>
+                    <p className="font-headline text-lg text-primary">TBD</p>
+                  </div>
+                  <div className="col-span-2 pt-4 border-t border-slate-100 flex justify-between items-center">
+                    <span className="text-xs text-secondary font-medium italic">Ref: {course.reference}</span>
+                    <Link
+                      to={`/course/${course.reference}`}
+                      className="bg-primary text-on-primary px-6 py-2 rounded text-sm font-semibold hover:brightness-110 transition-all"
+                    >
+                      View Module
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            )
+          }
+
+          return (
+            <div
+              key={course.reference}
+              className="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group"
+            >
+              <div className="aspect-video w-full bg-slate-200">
+                <div className="w-full h-full bg-gradient-to-br from-primary to-primary-fixed-dim opacity-30" />
+              </div>
+              <div className="p-6">
+                <h3 className="font-headline text-xl text-primary mb-4 leading-snug">{course.title}</h3>
+                <div className="space-y-4 mb-6">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Author</span>
+                    <span className="text-sm font-medium text-secondary">Editorial Board</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Professor</span>
+                    <span className="text-sm font-medium text-secondary">TBD</span>
+                  </div>
+                </div>
+                <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
+                  <span className="text-xs text-secondary italic">{course.reference}</span>
+                  <Link
+                    to={`/course/${course.reference}`}
+                    className="material-symbols-outlined text-primary cursor-pointer hover:translate-x-1 transition-transform"
+                    aria-label={`View ${course.title}`}
+                  >
+                    arrow_forward
+                  </Link>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      <div className="mt-24 max-w-4xl border-l-2 border-surface-tint bg-surface-container-low p-10 rounded-r-lg">
+        <h4 className="font-headline text-2xl text-primary mb-4 italic">The Scholarly Mandate</h4>
+        <p className="font-body text-secondary leading-relaxed mb-6">
+          "Education is not the learning of facts, but the training of the mind to think."
+        </p>
+        <div className="flex gap-4">
+          <button className="text-[10px] font-bold uppercase tracking-widest text-primary border-b border-primary pb-1">
+            Read Mission Statement
+          </button>
+          <button className="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors">
+            Contact Archivist
+          </button>
+        </div>
+      </div>
+    </main>
+  )
+}
+

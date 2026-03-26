@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Academic Editorial | Content Viewer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#1a365d",
+              "primary": "#002045",
+              "error-container": "#ffdad6",
+              "surface-tint": "#455f88",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "secondary-fixed": "#d8e3fa",
+              "surface-container-highest": "#e0e3e5",
+              "on-primary-fixed-variant": "#2d476f",
+              "tertiary": "#321b00",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#001b3c",
+              "primary-fixed-dim": "#adc7f7",
+              "surface-dim": "#d8dadc",
+              "surface-container-high": "#e6e8ea",
+              "background": "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#2b1700",
+              "surface": "#f7f9fb",
+              "on-secondary-container": "#586377",
+              "on-surface-variant": "#43474e",
+              "on-tertiary-fixed-variant": "#633f0f",
+              "secondary-fixed-dim": "#bcc7dd",
+              "on-background": "#191c1e",
+              "on-primary-container": "#86a0cd",
+              "tertiary-container": "#4f2e00",
+              "secondary": "#545f72",
+              "secondary-container": "#d5e0f7",
+              "primary-fixed": "#d6e3ff",
+              "on-secondary-fixed-variant": "#3c475a",
+              "on-tertiary-container": "#c6955e",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#ffddba",
+              "surface-variant": "#e0e3e5",
+              "outline-variant": "#c4c6cf",
+              "on-surface": "#191c1e",
+              "tertiary-fixed-dim": "#f2bc82",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#111c2c",
+              "outline": "#74777f",
+              "inverse-primary": "#adc7f7",
+              "surface-container": "#eceef0",
+              "inverse-surface": "#2d3133",
+              "surface-bright": "#f7f9fb",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .markdown-body h1 { font-family: 'Noto Serif', serif; font-size: 2.25rem; font-weight: 700; margin-bottom: 1.5rem; color: #002045; }
+        .markdown-body h2 { font-family: 'Noto Serif', serif; font-size: 1.75rem; font-weight: 600; margin-top: 2.5rem; margin-bottom: 1rem; color: #002045; }
+        .markdown-body p { font-family: 'Inter', sans-serif; font-size: 1.125rem; line-height: 1.8; margin-bottom: 1.5rem; color: #191c1e; }
+        .markdown-body code { background: #f2f4f6; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+        .markdown-body pre { background: #002045; color: #ffffff; padding: 1.5rem; border-radius: 8px; overflow-x: auto; margin-bottom: 2rem; }
+        .markdown-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+        .markdown-body li { margin-bottom: 0.5rem; font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body">
+<!-- TopNavBar -->
+<nav class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50 transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-serif italic text-2xl text-blue-950 dark:text-white tracking-tight">The Academic Editorial</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="font-serif text-blue-900 dark:text-blue-100 text-blue-700 dark:text-blue-300 border-b-2 border-blue-900 dark:border-blue-300 pb-1 transition-colors" href="#">Course Catalog</a>
+<a class="font-serif text-blue-900 dark:text-blue-100 text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors" href="#">TPs</a>
+<a class="font-serif text-blue-900 dark:text-blue-100 text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors" href="#">Exams</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:block relative">
+<input class="bg-surface-container-high border-none rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 w-64 transition-all" placeholder="Search resources..." type="text"/>
+</div>
+<button class="hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md p-2 transition-all">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-200" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-200/50 dark:bg-slate-800/50 h-px w-full"></div>
+</nav>
+<main class="max-w-screen-2xl mx-auto flex min-h-screen">
+<!-- SideNavBar -->
+<aside class="hidden lg:flex flex-col gap-y-2 p-6 bg-slate-50 dark:bg-slate-950 h-screen w-64 sticky top-20 border-r-0">
+<div class="mb-8">
+<h3 class="text-blue-900 dark:text-blue-300 font-sans text-sm font-bold uppercase tracking-wider">Course Navigator</h3>
+<p class="text-xs text-slate-500 mt-1">Current Module Resources</p>
+</div>
+<nav class="space-y-1">
+<a class="flex items-center gap-3 p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="menu_book">menu_book</span>
+<span class="font-sans text-sm font-medium">Lesson Content</span>
+</a>
+<a class="flex items-center gap-3 p-3 bg-white dark:bg-slate-800 text-blue-900 dark:text-blue-200 font-bold rounded-lg shadow-sm Active: scale-95 duration-150" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="assignment">assignment</span>
+<span class="font-sans text-sm">Related TPs</span>
+</a>
+<a class="flex items-center gap-3 p-3 text-slate-500 dark:text-slate-400 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 hover:translate-x-1 transition-transform group" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="quiz">quiz</span>
+<span class="font-sans text-sm font-medium">Exams</span>
+</a>
+</nav>
+<div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+<p class="text-[10px] uppercase tracking-[0.2em] text-slate-400 mb-4 font-bold">In this Section</p>
+<ul class="space-y-4">
+<li class="border-l-2 border-primary pl-4">
+<span class="block text-xs font-bold text-primary">01. Theoretical Basis</span>
+</li>
+<li class="border-l-2 border-transparent pl-4 hover:border-slate-300 transition-colors">
+<span class="block text-xs text-secondary">02. Applied Methodology</span>
+</li>
+<li class="border-l-2 border-transparent pl-4 hover:border-slate-300 transition-colors">
+<span class="block text-xs text-secondary">03. Statistical Validation</span>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Content Canvas -->
+<section class="flex-1 px-6 md:px-12 py-8 bg-surface">
+<!-- Breadcrumbs -->
+<nav class="flex items-center gap-2 mb-10 text-xs font-medium uppercase tracking-widest text-secondary/70">
+<a class="hover:text-primary transition-colors" href="#">Macroeconomics III</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Stochastic Modeling</a>
+<span class="material-symbols-outlined text-[14px]" data-icon="chevron_right">chevron_right</span>
+<span class="text-primary font-bold">TP 04: Market Equilibrium</span>
+</nav>
+<!-- Metadata Header -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-[10px] font-bold tracking-tighter uppercase">Practical Assignment</span>
+<span class="text-secondary/60 text-[10px] font-medium tracking-widest uppercase">REF: ECON-302-STOCH-04</span>
+</div>
+<h1 class="font-headline text-4xl md:text-5xl font-bold text-primary tracking-tight leading-tight max-w-3xl">
+                        Computational Analysis of General Market Equilibrium under Uncertainty
+                    </h1>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-primary rounded-lg text-sm font-medium transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="download">download</span>
+                        PDF
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg text-sm font-medium transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg" data-icon="share">share</span>
+                        Reference
+                    </button>
+</div>
+</div>
+<!-- Main Reading Area -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-12">
+<article class="xl:col-span-8 markdown-body max-w-[70ch]">
+<h2>1. Executive Overview</h2>
+<p>
+                        This module explores the derivation of equilibrium states in competitive markets where information is imperfect and temporal preferences vary across heterogeneous agents. By applying stochastic calculus to traditional Walrasian models, we can simulate price volatility and asset distribution in a way that reflects modern digital economies.
+                    </p>
+<div class="my-8 p-6 bg-surface-container-low border-l-4 border-surface-tint rounded-r-lg">
+<p class="font-bold text-sm text-primary uppercase tracking-widest mb-2 italic">Citation Block</p>
+<p class="text-base italic text-secondary leading-relaxed mb-0">
+                            "Equilibrium is not a static point, but a dynamic range within which the variance of expectations remains bounded by the structural constraints of the fiscal environment." — *The Digital Archivist, Vol 14.*
+                        </p>
+</div>
+<h2>2. Methodology and Calculation</h2>
+<p>
+                        To initiate the simulation, use the following parameters for the initial utility function. Ensure that the risk aversion coefficient (α) is adjusted to accommodate the specific variance of the target asset class.
+                    </p>
+<pre><code>// Initialize Market State
+const market = new EquilibriumEngine({
+  agents: 1000,
+  alpha: 0.85,
+  temporalBias: 0.12,
+  varianceThreshold: '0.05'
+});
+
+market.runSimulation('STOCHASTIC_WALRAS');</code></pre>
+<h2>3. Data Structure Requirements</h2>
+<ul>
+<li>Identification of primary and secondary market actors.</li>
+<li>Calibration of the discount rate relative to historical volatility.</li>
+<li>Mapping of information cascades across the network topology.</li>
+</ul>
+<p>
+                        The following figure illustrates the convergence of price discovery when the network density exceeds the critical threshold of 0.65. Note the sharp reduction in entropy as the consensus algorithm stabilizes.
+                    </p>
+<div class="my-10 overflow-hidden rounded-xl bg-surface-container-high">
+<img alt="Data visualization" class="w-full h-80 object-cover opacity-90 mix-blend-multiply" data-alt="abstract architectural visualization of 3d statistical charts and data graphs in deep blue and white with clean lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDE0yjGDkAK-Bhxuza-Gtky75TIxlFt1l2t6Z7aiQy6Z4k4jdY4YxjoQDYcysXfmrtWadXTu6HpyeF2NKhkPCZ2PIBHWMMxhTmjEWvU_n75jsigG_w_VPHk-3W-uqghD6RoW-LP8JWbaRf-8i0gcCWckqnAOzeuhUfaWzzJvUK5KE3543qX0VUxnQgAo-6Z6KbVyzXK-W3tTK6COb4xlbXtzrS5AsvMySzwKyn4a4tY_Tr_i3mRnlHUOJmlIL-j7ctdTYcdVVhfN0M"/>
+<div class="p-4 bg-slate-100/50">
+<p class="text-xs text-center text-secondary italic">Figure 1.1: Convergence patterns in decentralized liquidity pools.</p>
+</div>
+</div>
+</article>
+<!-- Aside / Contextual Column -->
+<aside class="xl:col-span-4 space-y-8">
+<div class="bg-white dark:bg-slate-900 p-8 rounded-xl shadow-sm border border-slate-100 dark:border-slate-800">
+<h4 class="font-bold text-primary text-lg mb-4">Submission Details</h4>
+<div class="space-y-4">
+<div class="flex justify-between items-center text-sm border-b border-slate-50 pb-2">
+<span class="text-secondary">Due Date</span>
+<span class="font-semibold text-primary">Dec 12, 2024</span>
+</div>
+<div class="flex justify-between items-center text-sm border-b border-slate-50 pb-2">
+<span class="text-secondary">Weight</span>
+<span class="font-semibold text-primary">15.0%</span>
+</div>
+<div class="flex justify-between items-center text-sm border-b border-slate-50 pb-2">
+<span class="text-secondary">Format</span>
+<span class="font-semibold text-primary">LaTeX/PDF</span>
+</div>
+</div>
+<button class="w-full mt-6 py-3 bg-primary text-on-primary rounded-lg font-bold text-sm tracking-wide uppercase hover:brightness-110 transition-all">
+                            Submit Assignment
+                        </button>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h4 class="font-bold text-primary text-sm uppercase tracking-widest mb-4">Further Reading</h4>
+<ul class="space-y-4">
+<li>
+<a class="group" href="#">
+<span class="block text-sm font-semibold text-primary group-hover:text-blue-700 transition-colors">Scholarly Guidelines: Math Formatting</span>
+<span class="text-xs text-secondary/70">Archive Reference #442</span>
+</a>
+</li>
+<li>
+<a class="group" href="#">
+<span class="block text-sm font-semibold text-primary group-hover:text-blue-700 transition-colors">University Press: Stochastic Notes</span>
+<span class="text-xs text-secondary/70">Archive Reference #109</span>
+</a>
+</li>
+</ul>
+</div>
+</aside>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 w-full mt-20 border-t border-slate-200/30 dark:border-slate-800/30">
+<div class="max-w-screen-2xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center">
+<div class="mb-6 md:mb-0">
+<span class="font-serif text-lg italic text-slate-900 dark:text-slate-100">The Academic Editorial</span>
+<p class="font-sans text-xs uppercase tracking-widest text-slate-500 mt-2">© 2024 The Academic Editorial. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 hover:text-blue-900 dark:hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100 underline underline-offset-4" href="#">University Press</a>
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 hover:text-blue-900 dark:hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100" href="#">Digital Archive</a>
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 hover:text-blue-900 dark:hover:text-blue-300 transition-opacity opacity-80 hover:opacity-100" href="#">Scholarly Guidelines</a>
+</div>
+</div>
+</footer>
+</body></html>

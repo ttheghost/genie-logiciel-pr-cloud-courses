@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Course Catalog | The Academic Editorial</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary-container": "#1a365d",
+              "primary": "#002045",
+              "error-container": "#ffdad6",
+              "surface-tint": "#455f88",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "secondary-fixed": "#d8e3fa",
+              "surface-container-highest": "#e0e3e5",
+              "on-primary-fixed-variant": "#2d476f",
+              "tertiary": "#321b00",
+              "on-secondary": "#ffffff",
+              "on-primary-fixed": "#001b3c",
+              "primary-fixed-dim": "#adc7f7",
+              "surface-dim": "#d8dadc",
+              "surface-container-high": "#e6e8ea",
+              "background": "#f7f9fb",
+              "surface-container-low": "#f2f4f6",
+              "on-error": "#ffffff",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#2b1700",
+              "surface": "#f7f9fb",
+              "on-secondary-container": "#586377",
+              "on-surface-variant": "#43474e",
+              "on-tertiary-fixed-variant": "#633f0f",
+              "secondary-fixed-dim": "#bcc7dd",
+              "on-background": "#191c1e",
+              "on-primary-container": "#86a0cd",
+              "tertiary-container": "#4f2e00",
+              "secondary": "#545f72",
+              "secondary-container": "#d5e0f7",
+              "primary-fixed": "#d6e3ff",
+              "on-secondary-fixed-variant": "#3c475a",
+              "on-tertiary-container": "#c6955e",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#ffddba",
+              "surface-variant": "#e0e3e5",
+              "outline-variant": "#c4c6cf",
+              "on-surface": "#191c1e",
+              "tertiary-fixed-dim": "#f2bc82",
+              "error": "#ba1a1a",
+              "on-secondary-fixed": "#111c2c",
+              "outline": "#74777f",
+              "inverse-primary": "#adc7f7",
+              "surface-container": "#eceef0",
+              "inverse-surface": "#2d3133",
+              "surface-bright": "#f7f9fb",
+              "surface-container-lowest": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .academic-glass {
+        background: rgba(247, 249, 251, 0.8);
+        backdrop-filter: blur(20px);
+      }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="font-serif italic text-2xl text-blue-950 dark:text-white tracking-tight">The Academic Editorial</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-900 dark:border-blue-300 pb-1 font-serif text-blue-900" href="#">Course Catalog</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors font-serif" href="#">TPs</a>
+<a class="text-slate-600 dark:text-slate-400 hover:text-blue-900 dark:hover:text-white transition-colors font-serif" href="#">Exams</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400">search</span>
+<input class="bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2 w-64 focus:ring-2 focus:ring-primary/20 focus:bg-surface-container-lowest transition-all" placeholder="Search catalog..." type="text"/>
+</div>
+<button class="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-md transition-all duration-300 ease-in-out">
+<span class="material-symbols-outlined text-blue-900 dark:text-blue-200" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+</div>
+<div class="bg-slate-200/50 dark:bg-slate-800/50 h-px w-full"></div>
+</header>
+<main class="max-w-screen-2xl mx-auto px-8 py-12">
+<!-- Hero Section -->
+<section class="mb-16 grid grid-cols-12 gap-8 items-end">
+<div class="col-span-12 md:col-span-8">
+<h1 class="font-headline text-5xl md:text-6xl text-primary mb-4 leading-tight tracking-tight">
+                    Curated Knowledge for the <br/>
+<span class="italic text-surface-tint">Modern Scholar</span>
+</h1>
+<p class="font-body text-lg text-secondary max-w-2xl">
+                    Explore our comprehensive collection of peer-reviewed course materials, structured laboratory protocols, and authoritative academic assessments.
+                </p>
+</div>
+<div class="col-span-12 md:col-span-4 flex justify-end gap-3 pb-2">
+<div class="flex items-center gap-2 bg-secondary-container px-4 py-2 rounded-full text-on-secondary-container text-xs font-semibold tracking-wider uppercase">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+<span>Filter Catalog</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full text-secondary text-xs font-semibold tracking-wider uppercase border border-outline-variant/20">
+<span>Sort by: Latest</span>
+</div>
+</div>
+</section>
+<!-- Bento Grid Catalog -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Featured Course Card -->
+<div class="lg:col-span-2 group relative bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300">
+<div class="aspect-[21/9] w-full overflow-hidden bg-primary-container relative">
+<img alt="" class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Detail of an old typewriter with focus on keys in a moody academic library setting with soft warm desk light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuVjTau7Jyj1MUFdsfYnN1iitqYr-l22D8g1GzllWq_3YN5alNye64qQc4MFiFLcOb_POzRQ4EciZo9sDD89icDFkvJL5i01xiyCoPHbYYZjcKoEAgi5GqgunovELK_NihJj9ABjcr6bypkhpC460NACLzS40MmdgB_1tPen57BTrIZ11dvA2xhO2SG3xz3BgO6rafaIsbzzuJR45kv1GRLcMSaJLAnGEj4j2nMlAT_-xzvVL66sP5dgK0HRNCy6SNo3QB7BqGN4x8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent"></div>
+<div class="absolute bottom-6 left-8">
+<span class="bg-tertiary-fixed text-on-tertiary-fixed text-[10px] font-bold tracking-widest uppercase px-2 py-1 rounded-sm mb-2 inline-block">Featured Discipline</span>
+<h2 class="font-headline text-3xl text-white">Introduction to Logic</h2>
+</div>
+</div>
+<div class="p-8 grid grid-cols-2 gap-6">
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Author</p>
+<p class="font-headline text-lg text-primary">Dr. Elena Rostova</p>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Professor</p>
+<p class="font-headline text-lg text-primary">Julian Thorne</p>
+</div>
+<div class="col-span-2 pt-4 border-t border-slate-100 flex justify-between items-center">
+<span class="text-xs text-secondary font-medium italic">Updated Sep 12, 2024</span>
+<button class="bg-primary text-on-primary px-6 py-2 rounded text-sm font-semibold hover:brightness-110 transition-all">View Module</button>
+</div>
+</div>
+</div>
+<!-- Standard Card 1 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+<div class="aspect-video w-full bg-slate-200">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Microchip circuitry glowing with blue light highlights representing advanced system architecture and technology" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3VqLqm723L4a9hG7l79jM63dWwp6GmzZTK1MkqemezPxyM3NSfcPvOdugnT-TACDZIGxds-Z848WbFqNeJEecTi0fm_rW5OiOrIobleVlgm1xxCksaLc6mZ5llUvLGwIVTV2evYSx5LPgYkEfynMSybJ5TzR26ATuY7sMFmqSkO83iUTpzG-LceBLWoMO6VuJpyK5HbO5WieoY_TQWWHMT7gO2YorncfKRqbR60UI-awXHRoscLY4YPNx1iuCfokSLu2sXWDId7c8"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-xl text-primary mb-4 leading-snug">Advanced System Architecture</h3>
+<div class="space-y-4 mb-6">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Faculty</span>
+<span class="text-sm font-medium text-secondary">Marcus Vane</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Author</span>
+<span class="text-sm font-medium text-secondary">Tech Editorial</span>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<span class="text-xs text-secondary italic">Aug 28, 2024</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Standard Card 2 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+<div class="aspect-video w-full bg-slate-200">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Scientific laboratory glassware filled with blue and clear liquids against a clean white background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD95iXtAYIbxK8LB4RrauPnvPQCZlWpyacBvvume1qz25W275LhXEMj3qU4rWJ2rpLtwLjZG2ce5C_BKuS4WqDdRQew_c6jdr7nFc_VMPiYFWp5MVCpRotdwb6rI1zbxe6yMTqzSuin8iCoNxIvzx1CwrV9OcEb9z2LLyVNmKhNq0pgafQ7kQth3Ubw5_4718ryBxtVQNBd6joHK_fAB3NYfhYbSB4LFntUO-o-5ergWiZbcNwezoJINoUhYErhOZJLNN1mjYv1i1tl"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-xl text-primary mb-4 leading-snug">Molecular Bio-Chemistry</h3>
+<div class="space-y-4 mb-6">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Faculty</span>
+<span class="text-sm font-medium text-secondary">Dr. Sarah Chen</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Author</span>
+<span class="text-sm font-medium text-secondary">Editorial Board</span>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<span class="text-xs text-secondary italic">Oct 05, 2024</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Standard Card 3 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+<div class="aspect-video w-full bg-slate-200">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A stack of ancient leather-bound books on a wooden desk with a single ray of sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgfg73L1skD62YB8_lYXU1r5oXFT1F2DA1P4naUINwtYFZsoCUJfKQ8_witySjRy2IUPZpU_SOhHG6jJ8pwY6mmKnmOm787EHjTtHnUlGBERa3DZDh5zBKCvoupPMpA9Fl9gJzafW_olr5KFM-oGXxGrexXyTQChWixwFPbwekpFPse_f9jljAWLe9VzRu7XjSDGu25Jv80bNfZnrs8pWSoB5AlHB5C0zWgFY27uTZrwiX1WB2I84dx9ptTMsQwtjs2kQSAD9pcqj8"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-xl text-primary mb-4 leading-snug">Medieval Historiography</h3>
+<div class="space-y-4 mb-6">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Faculty</span>
+<span class="text-sm font-medium text-secondary">Alistair Cook</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Author</span>
+<span class="text-sm font-medium text-secondary">P. Sterling</span>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<span class="text-xs text-secondary italic">Sep 30, 2024</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<!-- Standard Card 4 -->
+<div class="bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group">
+<div class="aspect-video w-full bg-slate-200">
+<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Minimalist architectural arches in white and grey tones with deep shadows and clean lines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARreBKUnZiNYdfOiF379bG5yiIUGnt110xlaJCH8ynkKrTcWz1kIwnWPladBv2OYkHmnjH1zw6GdSReKq97BMdzWCjW9oA_NgurCvL3KEWUO5T9gjek_O_8ft_O2dxF7ATtIfW9colWcUq3BcAXzMyZ5-Fx37a4E4r3UXf466DgleB0Egl1pPfSWKcFgNw8-zcCOcwDIJqYq1_DoP2Q4QkZ1p1hdJzF78Z647tFmHVoTFt1WrPI1pGJ7EpEmxZ4CDoKSRTCyoLnoTr"/>
+</div>
+<div class="p-6">
+<h3 class="font-headline text-xl text-primary mb-4 leading-snug">Structural Engineering I</h3>
+<div class="space-y-4 mb-6">
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Faculty</span>
+<span class="text-sm font-medium text-secondary">Leo Martinez</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Author</span>
+<span class="text-sm font-medium text-secondary">Uni Press</span>
+</div>
+</div>
+<div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+<span class="text-xs text-secondary italic">Nov 02, 2024</span>
+<span class="material-symbols-outlined text-primary cursor-pointer hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Citation/Insight Block -->
+<div class="mt-24 max-w-4xl border-l-2 border-surface-tint bg-surface-container-low p-10 rounded-r-lg">
+<h4 class="font-headline text-2xl text-primary mb-4 italic">The Scholarly Mandate</h4>
+<p class="font-body text-secondary leading-relaxed mb-6">
+                "Education is not the learning of facts, but the training of the mind to think." Our catalog is built upon this foundation, offering curated paths that challenge conventional perspectives and foster intellectual rigor.
+            </p>
+<div class="flex gap-4">
+<button class="text-[10px] font-bold uppercase tracking-widest text-primary border-b border-primary pb-1">Read Mission Statement</button>
+<button class="text-[10px] font-bold uppercase tracking-widest text-secondary hover:text-primary transition-colors">Contact Archivist</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 w-full mt-20 border-t border-slate-200/30 dark:border-slate-800/30 transition-opacity">
+<div class="max-w-screen-2xl mx-auto px-8 py-12 flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start">
+<span class="font-serif text-lg italic text-slate-900 dark:text-slate-100">The Academic Editorial</span>
+<p class="font-sans text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 mt-2">© 2024 The Academic Editorial. All rights reserved.</p>
+</div>
+<div class="flex gap-8">
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 transition-colors" href="#">University Press</a>
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 transition-colors underline underline-offset-4" href="#">Digital Archive</a>
+<a class="font-sans text-xs uppercase tracking-widest text-slate-500 dark:text-slate-400 hover:text-blue-900 dark:hover:text-blue-300 transition-colors" href="#">Scholarly Guidelines</a>
+</div>
+</div>
+</footer>
+</body></html>
