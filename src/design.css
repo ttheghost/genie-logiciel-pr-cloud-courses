@@ -50,12 +50,8 @@ body {
 }
 
 .markdown-body pre {
-  background: #002045;
   color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 8px;
   overflow-x: auto;
-  margin-bottom: 2rem;
 }
 
 .markdown-body ul {
