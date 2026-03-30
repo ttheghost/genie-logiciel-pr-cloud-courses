@@ -28,9 +28,9 @@ En analyse numérique, les polynômes de Lagrange, du nom de Joseph-Louis Lagran
 
 La formule du polynôme L est la suivante :
 
-[
+\[
 L(x) = \sum_{j=0}^{n-1} \left( y_j \cdot \left( \prod_{i=0 \ et \ i \ne j}^{n-1} \frac{x - x_i}{x_j - x_i} \right) \right)
-]
+\]
 
 ---
 
@@ -55,9 +55,9 @@ Y = [2, 1, 4, 3, 8, 3, -3]
 
 Écrire la fonction **produit(x, X, j)** qui reçoit en paramètres un réel x, le vecteur X contenant les abscisses des points à interpoler et un entier j qui représente un indice dans X. La fonction calcule et retourne la valeur du produit suivant :
 
-[
+\[
 \prod_{i=0 \ et \ i \ne j}^{n-1} \left( \frac{x - x_i}{x_j - x_i} \right)
-]
+\]
 
 ---
 
@@ -65,9 +65,9 @@ Y = [2, 1, 4, 3, 8, 3, -3]
 
 Écrire la fonction **L(x, P)** qui reçoit en paramètres un réel x et la liste P de tuples qui représentent les points à interpoler. La fonction retourne la valeur de l’expression suivante :
 
-[
+\[
 \sum_{j=0}^{n-1} \left( y_j \cdot \left( \prod_{i=0 \ et \ i \ne j}^{n-1} \frac{x - x_j}{x_i - x_j} \right) \right)
-]
+\]
 
 ---
 
@@ -100,12 +100,12 @@ Les équations différentielles (ED) apparaissent très souvent dans la modélis
 
 Le problème de Cauchy consiste à trouver une fonction y(t) définie sur l’intervalle [a, b] telle que :
 
-[
+\[
 \begin{cases}
 y' = f(t, y(t)) \quad ; \quad \forall t \in [a, b] \
 y(a) = y_0
 \end{cases}
-]
+\]
 
 Pour obtenir une approximation numérique de la solution y(t) sur l’intervalle [a, b], nous allons estimer la valeur de cette fonction en un nombre fini de points ti, pour i = 0, 1, ..., n, constituants les nœuds du maillage. La solution numérique obtenue aux points ti est notée yi = y(ti). L’écart entre deux abscisses, noté h, est appelé : le pas de discrétisation.
 
