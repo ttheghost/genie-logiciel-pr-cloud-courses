@@ -2,6 +2,25 @@ import { Link, useParams } from 'react-router-dom'
 import { coursesByReference, markdownByReference, tps, examsByCourseRef } from '../content/contentStore'
 import { MarkdownRenderer } from '../ui/MarkdownRenderer'
 
+function renderContent(introDoc: any | undefined) {
+  if (introDoc) {
+    if (introDoc.is_pdf) {
+      return (
+        <embed src={introDoc.content} type="application/pdf" className="serif-text text-lg leading-relaxed text-on-surface space-y-4 w-full" height="650px" />
+      )
+    }
+    return (
+      <div className="serif-text text-lg leading-relaxed text-on-surface space-y-4 max-w-[65ch]">
+        <MarkdownRenderer markdown={introDoc.content} />
+      </div>
+    )
+  } else {
+    return (
+      <p className="opacity-85">Aucun contenu d'introduction n'a été trouvé pour cette référence.</p>
+    )
+  }
+}
+
 export function CoursePage() {
   const { reference } = useParams()
   const course = reference ? coursesByReference.get(reference) : undefined
@@ -118,13 +137,7 @@ export function CoursePage() {
               Introduction
             </h2>
 
-            {introDoc ? (
-              <div className="serif-text text-lg leading-relaxed text-on-surface space-y-4 max-w-[65ch]">
-                <MarkdownRenderer markdown={introDoc.content} />
-              </div>
-            ) : (
-              <p className="opacity-85">Aucun contenu d'introduction n'a été trouvé pour cette référence.</p>
-            )}
+            {renderContent(introDoc)}
 
             <div className="mt-8 border-l-2 border-surface-tint bg-surface-container-low p-6 rounded-r-lg italic serif-text text-on-surface-variant">
               "The beauty of higher-order calculus lies not in the numbers, but in the elegant structure of the

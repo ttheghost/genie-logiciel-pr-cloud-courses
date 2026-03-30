@@ -80,11 +80,17 @@ const markdownDocuments: MarkdownDocument[] = Object.entries(markdownRaw).map(([
     isRecord(meta) && typeof meta.type === 'string'
       ? meta.type
       : undefined
+  
+  const is_pdf =
+    isRecord(meta) && typeof meta.is_pdf === 'boolean'
+      ? meta.is_pdf
+      : false
 
   return {
     type,
     reference,
     meta,
+    is_pdf,
     content: parsed.content,
   }
 })
