@@ -2,6 +2,6 @@
     "type": "TP",
     "reference": "tp1-stats",
     "courseRef": "statistics-optimization-for-ml",
-    "title": "TP1 - Statistiques",
+    "title": "TP1 - Statistiques(avec correction imparfaite)",
     "statementMarkdownRef": "tp1-stats-statement"
 }
