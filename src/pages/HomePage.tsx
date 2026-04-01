@@ -13,7 +13,7 @@ export function HomePage() {
             <span className="italic text-surface-tint">Cloud computing</span>
           </h1>
           <p className="font-body text-base sm:text-lg text-secondary max-w-2xl">
-            Build, deploy, and scale applications using cutting-edge cloud technologies, modern architectures, and industry best practices.
+            An academic resource dedicated to the Master's in Software Engineering for Cloud Computing, offering concise and organized course syntheses to support effective learning
           </p>
         </div>
         <div className="col-span-12 md:col-span-4 flex flex-wrap justify-start md:justify-end gap-3 pb-2">
