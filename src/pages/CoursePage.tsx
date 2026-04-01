@@ -114,10 +114,6 @@ export function CoursePage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 bg-surface-container-lowest rounded-xl shadow-sm">
               <div>
-                <p className="text-[10px] uppercase tracking-widest text-secondary mb-1">Lead Professor</p>
-                <p className="text-sm font-bold text-primary">Editorial Team</p>
-              </div>
-              <div>
                 <p className="text-[10px] uppercase tracking-widest text-secondary mb-1">Author</p>
                 <p className="text-sm font-bold text-primary">Scholarly Press</p>
               </div>
