@@ -51,13 +51,7 @@ export function HomePage() {
                 <div className="p-4 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Author</p>
-                    <p className="font-headline text-lg text-primary">Editorial Team</p>
-                  </div>
-                  <div>
-                    <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">
-                      Professor
-                    </p>
-                    <p className="font-headline text-lg text-primary">TBD</p>
+                    <p className="font-headline text-lg text-primary">M-E</p>
                   </div>
                   <div className="sm:col-span-2 pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <span className="text-xs text-secondary font-medium italic">Ref: {course.reference}</span>
