@@ -54,7 +54,7 @@ export function HomePage() {
                     <p className="font-headline text-lg text-primary">M-E</p>
                   </div>
                   <div className="sm:col-span-2 pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
-                    <span className="text-xs text-secondary font-medium italic">Ref: {course.reference}</span>
+                    <span className="text-xs text-secondary font-medium italic"> {course.reference}</span>
                     <Link
                       to={`/course/${course.reference}`}
                       className="bg-primary text-on-primary px-6 py-2 rounded text-sm font-semibold hover:brightness-110 transition-all"
