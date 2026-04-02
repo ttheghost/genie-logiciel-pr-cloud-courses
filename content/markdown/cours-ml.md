@@ -208,10 +208,12 @@ $$X=\begin{pmatrix} 1 & x_1^{(1)} & x_2^{(1)} & \cdots & x_n^{(1)} \\ 1 & x_1^{(
 *(Dimensions de $X$ : $m \times (n+1)$)*
 
 **2. Le Vecteur des Poids ($W$) :**
+
 $$W=\begin{pmatrix} w_0 \\ w_1 \\ w_2 \\ \vdots \\ w_n \end{pmatrix}$$
 *(Dimensions de $W$ : $(n+1) \times 1$)*
 
 **3. Le Vecteur Cible ($Y$) :**
+
 $$Y=\begin{pmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{pmatrix}$$
 *(Dimensions de $Y$ : $m \times 1$)*
 
@@ -219,6 +221,7 @@ Avec ces matrices, l'ensemble de nos prédictions pour les $m$ exemples se rédu
 $$\hat{Y}=XW$$
 
 ### 4.2 Coût multivarié et Descente de Gradient
+
 L'Erreur Quadratique Moyenne (MSE) utilisant notre formulation vectorisée devient :
 
 $$MSE=\frac{1}{2m}||Y-XW||^2=\frac{1}{2m}(XW-Y)^T(XW-Y)$$
@@ -228,6 +231,7 @@ Pour mettre à jour nos poids, l'algorithme de descente de gradient sous forme v
 $$W=W-\alpha\frac{1}{m}X^T(XW-Y)$$
 
 ### 4.3 L'Équation Normale (Solution Analytique)
+
 La descente de gradient est un algorithme itératif. Cependant, pour la régression linéaire, il existe en fait un moyen de résoudre les poids parfaits mathématiquement en une seule étape en fixant la dérivée de la fonction de coût à zéro et en résolvant pour $W$.
 
 C'est ce qu'on appelle l'**Équation Normale** :
@@ -252,6 +256,7 @@ Si vous essayez d'ajuster une ligne droite à des données courbes, vous obtenez
 Pour corriger cela, nous n'avons pas besoin d'un nouvel algorithme ; nous devons simplement modifier nos caractéristiques (*feature engineering*). La **Régression Polynomiale** est simplement une Régression Linéaire appliquée à des caractéristiques polynomiales créées de toutes pièces.
 
 ### 5.1 Polynôme du second degré
+
 Au lieu d'utiliser simplement $x$, nous ajoutons une nouvelle caractéristique à notre jeu de données qui est $x^2$.
 
 $$y=\beta_0+\beta_1x+\beta_2x^2+\epsilon$$
@@ -260,11 +265,13 @@ $$y=\beta_0+\beta_1x+\beta_2x^2+\epsilon$$
 Maintenant, nous traitons $x$ comme $x_1$ et $x^2$ comme $x_2$. Nous avons réussi à transformer un problème non linéaire en un problème de régression linéaire multivariée. Nous pouvons utiliser exactement la même descente de gradient ou la même équation normale pour le résoudre !
 
 ### 5.2 Polynôme de degré N
+
 Nous pouvons étendre cela au $N$-ième degré pour ajuster des courbes très complexes :
 
 $$y=\beta_0+\beta_1x+\beta_2x^2+...+\beta_nx^n+\epsilon$$
 
 ### 5.3 Le danger de la régression polynomiale : le Surajustement (Overfitting)
+
 Bien que l'ajout de degrés supérieurs vous permette d'ajuster des courbes complexes, cela introduit un risque massif : le **Surajustement** (Variance élevée).
 
 Si vous avez 10 points de données et que vous utilisez un polynôme de 9ème degré, votre modèle passera exactement par chaque point. Votre fonction de coût ($MSE$) sera exactement de $0$.
@@ -275,6 +282,7 @@ Ceci introduit la lutte fondamentale du Machine Learning : **Le compromis Biais-
 * Modèle trop complexe = Surajustement (Variance élevée).
 
 ### 5.4 Résumé de l'implémentation pour la régression polynomiale
+
 Si vous vouliez implémenter la régression polynomiale en utilisant l'équation normale, vos étapes en Python/NumPy ressembleraient à ceci :
 
 ```python
@@ -299,4 +307,5 @@ print(theta_best)
 ```
 
 ### Conclusion
+
 En maîtrisant la fonction d'hypothèse, la fonction de coût, le calcul derrière la descente de gradient et l'algèbre matricielle derrière la vectorisation, vous avez posé des fondations massives. Que vous traitiez d'une seule caractéristique pour prédire le prix des maisons, ou d'une matrice avec des milliers de caractéristiques polynomiales mappées à un phénomène complexe du monde réel, les mécanismes sous-jacents restent identiques : **définir le coût de l'erreur, et descendre mathématiquement la pente jusqu'à trouver la vérité.**
