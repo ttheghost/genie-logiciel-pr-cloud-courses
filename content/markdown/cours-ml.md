@@ -483,3 +483,114 @@ def regression_polynomiale_equation_normale(X, y, degre=2):
 # W = regression_polynomiale_equation_normale(X, y, degre=2)
 # print("Poids (Biais, W1, W2) : \n", W)
 ```
+
+# Chapitre : La Régression Logistique
+
+## 1. Introduction et Problématique
+La régression logistique est un algorithme fondamental d'apprentissage supervisé utilisé pour la **classification binaire**. Contrairement à la régression classique qui prédit une valeur continue, nous cherchons ici à prédire une catégorie.
+
+Prenons l'exemple de la classification d'emails (Spam ou Non-Spam). Dans ce type de *dataset*, la variable cible $y$ ne peut prendre que deux valeurs discrètes :
+* $y = 0$ : Non-Spam (Classe négative)
+* $y = 1$ : Spam (Classe positive)
+
+### Pourquoi ne pas utiliser la Régression Linéaire ?
+Il serait tentant d'utiliser une fonction linéaire $f(X) = X\Theta$ et d'établir une règle de décision simple :
+* Si $f(X) \ge 0.5 \implies y = 1$
+* Si $f(X) < 0.5 \implies y = 0$
+
+Graphiquement, cela équivaudrait à dire qu'il existe une valeur $x = a$ telle que toute valeur à droite est un spam, et toute valeur à gauche n'en est pas un. 
+
+**Le problème fondamental :** La fonction linéaire n'est pas bornée. Elle peut facilement prédire des valeurs négatives ($f(X) = -2.3$) ou supérieures à $1$ ($f(X) = 4.5$). Dans un contexte de classification où l'on cherche à exprimer une *probabilité* d'appartenance à une classe, ces valeurs n'ont aucun sens mathématique. De plus, la régression linéaire est extrêmement sensible aux valeurs aberrantes (outliers), ce qui déplacerait faussement la frontière de décision.
+
+---
+
+## 2. La Fonction Sigmoïde (Fonction Logistique)
+Pour résoudre ce problème de bornes, nous devons transformer la sortie de notre équation linéaire pour qu'elle soit toujours comprise entre $0$ et $1$. Nous utilisons pour cela la **fonction sigmoïde** (ou fonction logistique) :
+
+$$\sigma(z) = \frac{1}{1 + e^{-z}}$$
+
+En posant $Z = X\Theta$ (notre combinaison linéaire), notre nouveau modèle devient :
+$$h_\Theta(X) = \sigma(X\Theta)$$
+
+Cette fonction nous donne directement la **probabilité** que l'observation appartienne à la classe 1 : $P(y=1 | X; \Theta)$.
+
+**Comportement aux limites :**
+
+| Entrée ($Z$) | Sortie ($\sigma(Z)$) | Interprétation |
+| :--- | :--- | :--- |
+| $Z \to +\infty$ | $\sigma(Z) \to 1$ | Certitude absolue d'être dans la **Classe 1** |
+| $Z \to -\infty$ | $\sigma(Z) \to 0$ | Certitude absolue d'être dans la **Classe 0** |
+| $Z = 0$ | $\sigma(Z) = 0.5$ | **Incertitude absolue** (Frontière exacte) |
+
+---
+
+## 3. Frontières de Décision (Decision Boundaries)
+La frontière de décision est l'endroit où le modèle bascule d'une classe à l'autre. 
+
+Si l'on fixe le seuil de classification à $0.5$ :
+* Prédiction $y = 1$ si $\sigma(X\Theta) \ge 0.5$
+* Prédiction $y = 0$ si $\sigma(X\Theta) < 0.5$
+
+Sachant que $\sigma(Z) \ge 0.5$ est mathématiquement équivalent à $Z \ge 0$, la frontière de décision est définie par l'équation géométrique :
+$$X\Theta = 0$$
+
+C'est cette équation qui sépare spatialement les données de la classe 0 de celles de la classe 1.
+
+---
+
+## 4. La Fonction de Coût (Cost Function)
+
+### L'échec du MSE (Mean Squared Error)
+Pour la régression linéaire, la fonction de coût classique est l'erreur quadratique moyenne :
+$$J(\Theta) = \frac{1}{2m} \sum_{i=1}^{m} (X\Theta - Y)^2$$
+Cette fonction est **convexe** (en forme de bol), ce qui garantit qu'un algorithme de Descente de Gradient trouvera toujours le minimum global.
+
+Cependant, si nous insérons notre modèle logistique $\sigma(X\Theta)$ dans cette équation quadratique, la non-linéarité de la fonction exponentielle rendra la fonction de coût **non-convexe**. Elle sera remplie de minimums locaux. La descente de gradient risque fortement de se bloquer au premier minimum rencontré, sans jamais trouver la solution optimale.
+
+### La nouvelle fonction : L'Entropie Croisée (Log-Loss)
+Pour obtenir une fonction strictement convexe pour la régression logistique, nous utilisons les logarithmes pour pénaliser lourdement les mauvaises prédictions.
+
+Le coût d'une seule observation est défini ainsi :
+* **Si $y = 1$ :** $Coût = -\log(\sigma(X\Theta))$
+    *(Si la prédiction est $0$, le coût tend vers l'infini. Si elle est $1$, le coût est $0$.)*
+* **Si $y = 0$ :** $Coût = -\log(1 - \sigma(X\Theta))$
+
+Grâce à une astuce mathématique, nous pouvons combiner ces deux conditions en une seule équation élégante pour l'ensemble du dataset ($m$ observations) :
+
+$$J(\Theta) = -\frac{1}{m} \sum_{i=1}^{m} \left[ y_i \log(\sigma(X_i\Theta)) + (1 - y_i) \log(1 - \sigma(X_i\Theta)) \right]$$
+
+---
+
+## 5. Théorie Probabiliste : Maximum de Vraisemblance (Likelihood)
+Pourquoi cette fonction de coût a-t-elle cette forme exacte ? Elle découle directement de la théorie des probabilités.
+
+La probabilité d'une observation, sachant qu'elle ne peut avoir que deux états ($0$ ou $1$), suit une **Loi de Bernoulli** :
+$$P(y | x) = \sigma(X\Theta)^y \times (1 - \sigma(X\Theta))^{(1-y)}$$
+*(Si $y=1$, le second terme s'annule. Si $y=0$, le premier terme s'annule).*
+
+**La Vraisemblance (Likelihood) $L$ :**
+En supposant que nos données d'entraînement sont indépendantes, la probabilité d'observer l'ensemble de notre dataset est le produit des probabilités individuelles :
+$$L(\Theta) = \prod_{i=1}^{m} P(y_i | x_i) = \prod_{i=1}^{m} \sigma(X_i\Theta)^{y_i} \times (1 - \sigma(X_i\Theta))^{(1-y_i)}$$
+
+**La Log-Vraisemblance (Log-Likelihood) :**
+Maximiser un produit de probabilités est complexe et sujet aux erreurs d'arrondi numérique. On utilise donc la propriété des logarithmes $\log(a \times b) = \log(a) + \log(b)$ pour transformer ce produit en somme :
+$$\log(L(\Theta)) = \sum_{i=1}^{m} \left[ y_i \log(\sigma_i) + (1 - y_i)\log(1 - \sigma_i) \right]$$
+
+**Conclusion :** Maximiser la Log-Vraisemblance (trouver les paramètres $\Theta$ qui rendent nos données les plus probables) revient exactement à minimiser notre fonction de coût $J(\Theta)$ !
+
+---
+
+## 6. Optimisation : La Descente de Gradient
+Pour trouver les paramètres optimaux, nous devons calculer la dérivée partielle de notre fonction de coût $J(\Theta)$ par rapport à chaque paramètre $\theta_j$. 
+
+Après dérivation (où l'on utilise la propriété de la dérivée de la sigmoïde : $\sigma'(z) = \sigma(z)(1-\sigma(z))$), on obtient un résultat remarquablement similaire à celui de la régression linéaire :
+
+$$\frac{\partial}{\partial \Theta} J(\Theta) = \frac{1}{m} \sum_{i=1}^{m} (\sigma(X_i\Theta) - y_i) X_i$$
+
+Cette formulation vectorielle est particulièrement puissante car elle se traduit par une simple multiplication matricielle au niveau de l'implémentation algorithmique :
+$$\nabla J(\Theta) = \frac{1}{m} X^T (\sigma(X\Theta) - Y)$$
+
+**L'algorithme de mise à jour (Update Rule) :**
+À chaque itération, on met à jour les poids en soustrayant le gradient multiplié par le taux d'apprentissage (learning rate) $\alpha$ :
+
+$$\Theta := \Theta - \alpha \left[ \frac{1}{m} \sum_{i=1}^{m} (\sigma(X_i\Theta) - y_i) X_i \right]$$
