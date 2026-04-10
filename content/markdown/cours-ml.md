@@ -594,3 +594,37 @@ $$\nabla J(\Theta) = \frac{1}{m} X^T (\sigma(X\Theta) - Y)$$
 À chaque itération, on met à jour les poids en soustrayant le gradient multiplié par le taux d'apprentissage (learning rate) $\alpha$ :
 
 $$\Theta := \Theta - \alpha \left[ \frac{1}{m} \sum_{i=1}^{m} (\sigma(X_i\Theta) - y_i) X_i \right]$$
+
+## 7. La Régularisation (Prévenir le Surapprentissage / Overfitting)
+
+Lorsqu'un modèle possède trop de paramètres ou s'entraîne trop longtemps, il risque d'apprendre par cœur les données d'entraînement, y compris le bruit. C'est ce qu'on appelle le **surapprentissage** (overfitting). Le modèle perd alors sa capacité à généraliser sur de nouvelles données.
+
+Pour contrer cela, on utilise la **régularisation**. L'idée est d'ajouter un terme de pénalité à notre fonction de coût pour forcer les paramètres $\theta$ (les poids) à rester petits.
+
+La forme générale d'une fonction de coût régularisée s'écrit ainsi :
+
+$$J(\theta) = J_{original}(\theta) + \lambda R(\theta)$$
+
+* **$J_{original}(\theta)$** : La fonction de coût standard (par exemple, le MSE pour la régression linéaire ou la Log-Loss pour la régression logistique).
+* **$R(\theta)$** : Le terme de régularisation (la pénalité).
+* **$\lambda$ (Lambda)** : L'hyperparamètre de régularisation. Il contrôle le compromis entre bien ajuster les données d'entraînement (faible $\lambda$) et garder les poids petits (fort $\lambda$). *Note : On ne régularise généralement pas le biais $\theta_0$.*
+
+*(Note conceptuelle : Les formules ci-dessous utilisent l'erreur quadratique moyenne $\sum(y_i - \hat{y}_i)^2$ propre à la régression linéaire pour illustrer $J_{original}$, mais ces mêmes pénalités s'appliquent exactement de la même manière à la fonction Log-Loss de la régression logistique vue précédemment).*
+
+### La Régularisation Ridge (Norme L2)
+
+C'est la forme la plus courante. Elle ajoute une pénalité égale au carré de la magnitude des coefficients.
+
+$$J(\theta) = \sum_{i=1}^{m} (y_i - \hat{y}_i)^2 + \lambda \sum_{j=1}^{n} \theta_j^2$$
+
+**Effet :** La pénalité au carré $\theta_j^2$ force les paramètres à devenir très petits, proches de zéro, mais jamais exactement zéro. Cela permet de réduire l'impact des variables les moins importantes sans les éliminer complètement, ce qui rend le modèle plus stable.
+
+### La Régularisation Elastic Net (Combinaison L1 et L2)
+
+Il existe une autre forme de régularisation appelée **Lasso (Norme L1)** qui utilise la valeur absolue des poids $\sum |\theta_j|$. L'avantage du Lasso est qu'il agit comme un sélecteur de variables : il force les poids des variables inutiles à devenir *exactement* zéro.
+
+L'**Elastic Net** est une méthode hybride qui combine la puissance de Ridge et de Lasso dans la même équation, en leur attribuant à chacun un poids spécifique ($\lambda_1$ et $\lambda_2$) :
+
+$$J(\theta) = \sum_{i=1}^{m} (y_i - \hat{y}_i)^2 + \lambda_1 \sum_{j=1}^{n} | \theta_j | + \lambda_2 \sum_{j=1}^{n} \theta_j^2$$
+
+**Effet :** Cette méthode est particulièrement utile lorsque vous avez de nombreuses caractéristiques (features) corrélées entre elles. Le terme L1 ($\lambda_1$) va sélectionner un sous-ensemble de variables pertinentes (en mettant les autres à zéro), tandis que le terme L2 ($\lambda_2$) va maintenir une certaine stabilité et regrouper les variables corrélées pour éviter que le modèle n'en choisisse une au hasard.
