@@ -390,4 +390,8 @@ Conclusion : on ne peut pas affirmer que les sacs dépassent \(10\ \text{kg}\) a
 
 <embed src="/media/pdf/statistique-optimisation-td.pdf" type="application/pdf" width="100%" height="600px" />
 
+---
+# Correction du prof
 
+<embed src="/media/pdf/correction-td-optimisation.pdf" type="application/pdf" width="100%" height="600px" />
+---
