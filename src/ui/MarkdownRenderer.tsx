@@ -119,6 +119,12 @@ export function MarkdownRenderer({ markdown, className }: { markdown: string; cl
                 if (match[1] === 'mermaid') {
                   return <div style={{ width: '100%', overflowX: 'auto' }}><MermaidChart code={codeString} /></div>
                 }
+                if (match[1] === 'pdf') {
+                  return <div style={{ width: '100%', overflowX: 'auto' }}>
+                    <a href={codeString} target="_blank" rel="noopener noreferrer" className='px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-primary rounded-lg text-sm font-medium transition-all'>Open PDF</a>
+                    <embed src={codeString} type="application/pdf" width="100%" height="600px" />
+                  </div>
+                }
                 return (
                   <div style={{ position: 'relative' }}>
                     <CopyButton text={codeString} />
