@@ -1194,4 +1194,7 @@ g) `distance` : renvoie la distance entre deux complexes `√((x₁ - x₂)² + 
 
 ---
 
-<embed src="/media/pdf/Python.pdf" type="application/pdf" width="100%" height="600px" />
+```pdf
+/media/pdf/Python.pdf
+```
+

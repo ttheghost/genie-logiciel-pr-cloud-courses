@@ -6,7 +6,10 @@ function renderContent(introDoc: any | undefined) {
   if (introDoc) {
     if (introDoc.is_pdf) {
       return (
-        <embed src={introDoc.content} type="application/pdf" className="serif-text text-lg leading-relaxed text-on-surface space-y-4 w-full" height="650px" />
+        <div style={{ width: '100%', overflowX: 'auto' }}>
+          <a href={introDoc.content} target="_blank" rel="noopener noreferrer" className='px-4 py-2 bg-surface-container-low hover:bg-surface-container-high text-primary rounded-lg text-sm font-medium transition-all'>Open PDF</a>
+          <embed src={introDoc.content} type="application/pdf" width="100%" height="600px" />
+        </div>
       )
     }
     return (

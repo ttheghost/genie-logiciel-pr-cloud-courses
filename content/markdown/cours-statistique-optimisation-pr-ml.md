@@ -943,5 +943,8 @@ on ne rejette pas \(H_0\).
 
 ---
 
-<embed src="/media/pdf/statistique-optimisation.pdf" type="application/pdf" width="100%" height="600px" />
+```pdf
+/media/pdf/statistique-optimisation.pdf
+```
+
 
