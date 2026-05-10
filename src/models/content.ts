@@ -3,6 +3,7 @@ export type Course = {
   reference: string
   title: string
   introMarkdownRef?: string
+  author?: string
 }
 
 export type TP = {
