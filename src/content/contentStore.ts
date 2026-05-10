@@ -38,7 +38,8 @@ const coursesList: Course[] = Object.values(coursesRaw)
       v.type === 'Course' &&
       typeof v.reference === 'string' &&
       typeof v.title === 'string' &&
-      (v.introMarkdownRef === undefined || typeof v.introMarkdownRef === 'string')
+      (v.introMarkdownRef === undefined || typeof v.introMarkdownRef === 'string') &&
+      (v.author === undefined || typeof v.author === 'string')
     )
   })
 

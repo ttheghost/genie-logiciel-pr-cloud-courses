@@ -97,6 +97,8 @@ export function CoursePage() {
               <p className="text-[10px] uppercase tracking-tighter mb-2 opacity-60">dev Contact</p>
               <p className="text-xs font-bold">M-E</p>
               <p className="text-[10px] font-normal text-secondary">mohamed.el-ghali@uit.ac.ma</p>
+              <p className="text-xs font-bold">theGhost</p>
+              <p className="text-[10px] font-normal text-secondary">me@0xghost.dev</p>
             </div>
           </div>
         </aside>
@@ -118,7 +120,7 @@ export function CoursePage() {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 p-4 sm:p-6 bg-surface-container-lowest rounded-xl shadow-sm">
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-secondary mb-1">Author</p>
-                <p className="text-sm font-bold text-primary">M-E</p>
+                <p className="text-sm font-bold text-primary">{course.author || 'Unknown'}</p>
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-widest text-secondary mb-1">Last Update</p>

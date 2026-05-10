@@ -51,7 +51,7 @@ export function HomePage() {
                 <div className="p-4 sm:p-8 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <p className="text-[10px] uppercase tracking-widest text-slate-400 font-bold mb-1">Author</p>
-                    <p className="font-headline text-lg text-primary">M-E</p>
+                    <p className="font-headline text-lg text-primary">{course.author || 'Unknown'}</p>
                   </div>
                   <div className="sm:col-span-2 pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
                     <span className="text-xs text-secondary font-medium italic"> {course.reference}</span>
@@ -80,7 +80,7 @@ export function HomePage() {
                 <div className="space-y-4 mb-6">
                   <div className="flex items-center justify-between">
                     <span className="text-[10px] uppercase tracking-widest text-slate-400 font-bold">Author</span>
-                    <span className="text-sm font-medium text-secondary">M-E</span>
+                    <span className="text-sm font-medium text-secondary">{course.author || 'Unknown'}</span>
                   </div>
                 </div>
                 <div className="pt-4 border-t border-slate-100 flex justify-between items-center">
