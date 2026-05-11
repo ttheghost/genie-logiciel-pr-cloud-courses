@@ -24,7 +24,8 @@ export function TopNavBar() {
     <header className="bg-slate-50/80 dark:bg-slate-900/80 backdrop-blur-md shadow-sm dark:shadow-none docked full-width top-0 sticky z-50 transition-all duration-300 ease-in-out">
       <div className="flex justify-between items-center w-full px-4 sm:px-8 py-3 sm:py-4 max-w-screen-2xl mx-auto">
         <div className="flex items-center gap-4 sm:gap-8">
-          <Link to="/" className="font-serif italic text-lg sm:text-2xl text-blue-950 dark:text-white tracking-tight">
+          <Link to="/" className="font-serif italic text-lg sm:text-2xl text-blue-950 dark:text-white tracking-tight flex gap-4 justify-center items-center">
+            <img src="/favicon.png" alt="Logo" width="50" height="50" />
             Software Engineering
           </Link>
           {/* Desktop nav */}
