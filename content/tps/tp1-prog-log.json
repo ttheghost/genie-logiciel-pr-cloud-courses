@@ -1,0 +1,9 @@
+
+{
+    "type": "TP",
+    "reference": "tp1-prog-log",
+    "courseRef": "cours-prog-log",
+    "title": "TP1 - Programmation logique",
+    "statementMarkdownRef": "tp1-prog-log",
+    "author": "M-E"
+}

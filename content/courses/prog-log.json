@@ -1,0 +1,8 @@
+{
+    "type": "Course",
+    "reference": "cours-prog-log",
+    "title": "Programmation logique",
+    "introMarkdownRef": "cours-prog-log",
+    "author": "M-E"
+
+}
